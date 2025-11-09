@@ -7,7 +7,7 @@ import { Context } from './Context';
 
 const App = () => {
 
-const [data,setData]=useState(null)
+const [data,setData]=useState(null);
 const [axiosData,setAxiosData]=useState(null)
 const [load,setLoad]=useState(0)
 // const [post,setPost]=useState(1)
@@ -249,10 +249,6 @@ const refresh=()=>{
 if(data){
     return (
       <>
-<FetchIndv data={{data,setLoad}} ></FetchIndv>
-
-<AxiosIndv data={{refresh,axiosData}}></AxiosIndv>
-
 
 <div className='p-4 rounded shadow-2xl m-6 '>
 <h1>The new Post is added to front of list because its difficult to check after each post </h1>
@@ -262,11 +258,11 @@ if(data){
 <form action="" className='flex flex-col items-center justify-center'>
   
   
-  <input type="text" placeholder='Enter Your Title' className='focus:outline-violet-400 rounded m-3 p-2 shadow-red-100 border-gray-500  border w-100'  value={input.body} onChange={(e)=>handleInput(e)} required/>
+  <input type="text" placeholder='Enter Your Title' className='focus:outline-violet-400 rounded m-3 p-2 shadow-red-100 border-gray-500  border w-full'  value={input.body} onChange={(e)=>handleInput(e)} required/>
 
 
 
-  <input type="email" placeholder='Enter You Body' className='focus:outline-violet-400 rounded m-3 p-2 shadow-black border-gray-500  border w-100' value={input.title} onChange={(e)=>handleInputEmail(e)} required/>
+  <input type="email" placeholder='Enter You Body' className='focus:outline-violet-400 rounded m-3 p-2 shadow-black border-gray-500  border w-full' value={input.title} onChange={(e)=>handleInputEmail(e)} required/>
 
   
 
@@ -290,6 +286,10 @@ if(data){
   <GetCards ></GetCards>
 
 </Context.Provider>
+
+<FetchIndv data={{data,setLoad}} ></FetchIndv>
+
+<AxiosIndv data={{refresh,axiosData}}></AxiosIndv>
 
 
 </>
